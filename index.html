@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For You</title>
+    <style>
+        body {
+            background-color: #ffc0cb; /* Pink Background */
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            max-width: 400px;
+            width: 100%;
+            /* This part fixes the "stuck" issue */
+            max-height: 80vh; 
+            overflow-y: auto; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        h1 { 
+            color: #d63384; 
+            font-size: 1.4rem; 
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        button {
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.2s;
+            flex-shrink: 0; /* Prevents button from squishing */
+        }
+
+        button:hover { 
+            transform: scale(1.05); 
+            background-color: #e05297; 
+        }
+
+        .hidden { display: none; }
+
+        /* Smooth scrollbar for the pink vibe */
+        .container::-webkit-scrollbar { width: 5px; }
+        .container::-webkit-scrollbar-thumb { background: #ff69b4; border-radius: 10px; }
+    </style>
+</head>
+<body>
+
+    <div id="page1" class="container">
+        <h1>Hii, ma Kishor... <br><br> Like idk ma kasto xu, alikata darpok, ali kata xadha, alikate pagal ani lastai hawa xu. <br><br> Ok like malai yo code haru garna maja aauxa.</h1>
+        <button onclick="nextPage(2)">Continue</button>
+    </div>
+
+    <div id="page2" class="container hidden">
+        <h1>Malai thaxaina yo k ho tara ma promise tapai sanga basxu like earth sanga moon basxa. <br><br> Ma katai jana tapai lai xodhera... <br><br> Tapai sanga boldha safe feel hunxa ani ma bela bela horny type ko hunxa like kahele kahe.</h1>
+        <button onclick="nextPage(3)">Continue</button>
+    </div>
+
+    <div id="page3" class="container hidden">
+        <h1>I love you! <br><br> Tapai mero gf banu hunxa? <br><br> Like promise ma tapai le vaneko manxu like ma tapai lai xodhera jadina.</h1>
+        <div style="display: flex; gap: 15px; justify-content: center; margin-top: 10px;">
+            <button onclick="response('yes')">Yes ❤️</button>
+            <button onclick="response('no')">No 💔</button>
+        </div>
+    </div>
+
+    <script>
+        function nextPage(pageNumber) {
+            // Hide all
+            document.getElementById('page1').classList.add('hidden');
+            document.getElementById('page2').classList.add('hidden');
+            document.getElementById('page3').classList.add('hidden');
+            
+            // Show current
+            const next = document.getElementById('page' + pageNumber);
+            next.classList.remove('hidden');
+            // Reset scroll to top for the new page
+            next.scrollTop = 0;
+        }
+
+        function response(answer) {
+            if (answer === 'yes') {
+                window.location.href = "https://youtu.be/voM5oj6dffk?si=IN0WXz0tuwBvPdrc"; 
+            } else {
+                window.location.href = "https://youtu.be/Fnp4FmMLSAE?si=GqWlDAFJV1WwDhMb";
+            }
+        }
+    </script>
+</body>
+</html>
